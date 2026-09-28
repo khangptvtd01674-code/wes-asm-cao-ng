@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài khoản của tôi - TECHZONE</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .account-layout { display: flex; gap: 30px; margin-top: 30px; margin-bottom: 60px; }
+        .account-sidebar { width: 250px; background: white; border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; }
+        .account-nav { list-style: none; }
+        .account-nav li { margin-bottom: 10px; }
+        .account-nav a { display: block; padding: 10px 15px; border-radius: 4px; color: var(--dark-color); transition: var(--transition); }
+        .account-nav a:hover, .account-nav a.active { background: var(--primary-color); color: white; }
+        
+        .account-content { flex: 1; background: white; border-radius: var(--radius); box-shadow: var(--shadow); padding: 30px; }
+        .account-content h2 { margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        
+        .info-group { margin-bottom: 15px; }
+        .info-group strong { display: inline-block; width: 120px; color: #555; }
+        
+        .order-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .order-table th, .order-table td { padding: 12px; border: 1px solid var(--border); text-align: left; }
+        .order-table th { background: #f8f9fa; }
+        .status-badge { padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+        .status-pending { background: #f39c12; color: white; }
+        .status-done { background: var(--success); color: white; }
+        .status-cancel { background: var(--danger); color: white; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html">TECH<span>ZONE</span></a></div>
+            <div class="header-actions">
+                <a href="cart.html" class="action-btn"><i class="fas fa-shopping-cart"></i>Giỏ hàng<span id="cartCount" class="badge">0</span></a>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="products.html">Sản phẩm</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="account-layout">
+            <div class="account-sidebar">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <div style="width: 80px; height: 80px; background: #eee; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #aaa;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 id="sidebarName">Người dùng</h3>
+                </div>
+                <ul class="account-nav">
+                    <li><a href="#" class="active" id="tabInfo">Thông tin tài khoản</a></li>
+                    <li><a href="#" id="tabOrders">Đơn hàng của tôi</a></li>
+                    <li><a href="#" id="btnLogout" style="color: var(--danger);"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+                </ul>
+            </div>
+
+            <div class="account-content" id="contentInfo">
+                <h2>Thông tin cá nhân</h2>
+                <div class="info-group"><strong>Họ và tên:</strong> <span id="infoName"></span></div>
+                <div class="info-group"><strong>Email:</strong> <span id="infoEmail"></span></div>
+                <div class="info-group"><strong>Điện thoại:</strong> <span id="infoPhone"></span></div>
+                <button class="btn-fill" style="margin-top: 20px; padding: 10px 20px; font-size: 14px;">Cập nhật thông tin</button>
+            </div>
+
+            <div class="account-content" id="contentOrders" style="display: none;">
+                <h2>Lịch sử đơn hàng</h2>
+                <table class="order-table">
+                    <thead>
+                        <tr>
+                            <th>Mã ĐH</th>
+                            <th>Ngày đặt</th>
+                            <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderListBody">
+                        <!-- Injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/account.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - TECHZONE</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header (Same as index) -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html">TECH<span>ZONE</span></a></div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-actions">
+                <a href="login.html" class="action-btn" id="userBtn"><i class="far fa-user"></i><span id="userNameDisplay">Tài khoản</span></a>
+                <a href="cart.html" class="action-btn"><i class="fas fa-shopping-cart"></i>Giỏ hàng<span id="cartCount" class="badge">0</span></a>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="products.html">Sản phẩm</a></li>
+                    <li><a href="contact.html" class="active">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container section">
+        <h2 style="text-align:center; margin-bottom: 40px; color: var(--dark-color)">LIÊN HỆ VỚI CHÚNG TÔI</h2>
+        <div style="display:flex; gap:40px; flex-wrap:wrap;">
+            <div style="flex:1; min-width:300px; background:white; padding:30px; border-radius:8px; box-shadow:var(--shadow);">
+                <h3 style="margin-bottom: 20px;">Thông tin liên hệ</h3>
+                <p style="margin-bottom: 15px;"><i class="fas fa-map-marker-alt" style="color:var(--primary-color); width:20px;"></i> 123 Đường Công Nghệ, Quận 1, TP.HCM</p>
+                <p style="margin-bottom: 15px;"><i class="fas fa-phone-alt" style="color:var(--primary-color); width:20px;"></i> Hotline: 1900 1234</p>
+                <p style="margin-bottom: 15px;"><i class="fas fa-envelope" style="color:var(--primary-color); width:20px;"></i> Email: contact@techzone.vn</p>
+                <h3 style="margin-top: 30px; margin-bottom: 20px;">Bản đồ</h3>
+                <div style="background:#eee; height:200px; border-radius:8px; display:flex; align-items:center; justify-content:center;">
+                    (Google Maps Embedded)
+                </div>
+            </div>
+            <div style="flex:1; min-width:300px; background:white; padding:30px; border-radius:8px; box-shadow:var(--shadow);">
+                <h3 style="margin-bottom: 20px;">Gửi tin nhắn</h3>
+                <form id="contactForm">
+                    <div style="margin-bottom: 15px;">
+                        <input type="text" placeholder="Họ và tên" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:4px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <input type="email" placeholder="Email của bạn" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:4px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <textarea placeholder="Nội dung tin nhắn" rows="5" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:4px; font-family:inherit;"></textarea>
+                    </div>
+                    <button type="submit" class="btn-fill" style="width:100%; border:none; padding:12px; font-size:16px;">GỬI TIN NHẮN</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>Về TECHZONE</h3>
+                <p>TechZone là hệ thống bán lẻ các thiết bị công nghệ chính hãng hàng đầu, mang đến trải nghiệm mua sắm tuyệt vời nhất cho khách hàng.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Chính sách</h3>
+                <ul>
+                    <li><a href="#">Chính sách mua hàng</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Liên hệ</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Đường Công Nghệ, Quận 1, TP.HCM</li>
+                    <li><i class="fas fa-phone-alt"></i> 1900 1234</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất.");
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>

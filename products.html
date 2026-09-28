@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm - TECHZONE</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header (Same as index) -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html">TECH<span>ZONE</span></a></div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-actions">
+                <a href="login.html" class="action-btn" id="userBtn"><i class="far fa-user"></i><span id="userNameDisplay">Tài khoản</span></a>
+                <a href="cart.html" class="action-btn"><i class="fas fa-shopping-cart"></i>Giỏ hàng<span id="cartCount" class="badge">0</span></a>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="products.html?category=mouse_keyboard" class="cat-link">Chuột & Phím</a></li>
+                    <li><a href="products.html?category=charger_cable" class="cat-link">Cáp Sạc</a></li>
+                    <li><a href="products.html?category=audio" class="cat-link">Âm thanh</a></li>
+                    <li><a href="products.html?category=bag" class="cat-link">Balo Túi</a></li>
+                    <li><a href="products.html?category=other" class="cat-link">Phụ kiện khác</a></li>
+                    <li><a href="products.html?sale=true" class="sale-link">Khuyến mãi</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container page-layout section">
+        <!-- Sidebar Filter -->
+        <aside class="sidebar">
+            <div class="filter-group">
+                <h3>Danh mục sản phẩm</h3>
+                <ul class="category-list" id="categoryFilter">
+                    <li><label><input type="radio" name="cat" value="all" checked> Tất cả sản phẩm</label></li>
+                    <li><label><input type="radio" name="cat" value="mouse_keyboard"> Chuột & Bàn phím</label></li>
+                    <li><label><input type="radio" name="cat" value="charger_cable"> Sạc, Cáp</label></li>
+                    <li><label><input type="radio" name="cat" value="audio"> Tai nghe & Loa</label></li>
+                    <li><label><input type="radio" name="cat" value="bag"> Balo & Túi chống sốc</label></li>
+                    <li><label><input type="radio" name="cat" value="other"> Phụ kiện khác</label></li>
+                </ul>
+            </div>
+            <div class="filter-group">
+                <h3>Trạng thái</h3>
+                <ul class="category-list">
+                    <li><label><input type="checkbox" id="filterSale"> Hàng Khuyến Mãi</label></li>
+                    <li><label><input type="checkbox" id="filterNew"> Hàng Mới</label></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="products-main">
+            <div class="products-header">
+                <h1 id="pageTitle">Tất cả sản phẩm</h1>
+                <div class="sort-box">
+                    <label>Sắp xếp: </label>
+                    <select id="sortSelect">
+                        <option value="default">Mặc định</option>
+                        <option value="price-asc">Giá thấp → cao</option>
+                        <option value="price-desc">Giá cao → thấp</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="noResults" style="display:none; text-align: center; padding: 40px; color: #777;">
+                <i class="fas fa-search" style="font-size: 40px; margin-bottom: 20px;"></i>
+                <h2>Không tìm thấy sản phẩm phù hợp.</h2>
+            </div>
+
+            <div class="product-grid" id="productsGrid">
+                <!-- Injected by JS -->
+            </div>
+        </main>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

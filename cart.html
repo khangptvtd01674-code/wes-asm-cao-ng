@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - TECHZONE</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html">TECH<span>ZONE</span></a></div>
+            <nav class="navbar" style="background:transparent; margin-left: 50px;">
+                <ul class="nav-links">
+                    <li><a href="index.html" style="color:var(--dark-color)">Tiếp tục mua sắm</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container section">
+        <h2 style="margin-bottom: 20px;">GIỎ HÀNG CỦA BẠN</h2>
+        
+        <div class="cart-container">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                        <th>Xóa</th>
+                    </tr>
+                </thead>
+                <tbody id="cartTableBody">
+                    <!-- Injected by JS -->
+                </tbody>
+            </table>
+
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Tổng sản phẩm:</span>
+                    <span id="cartCountSum">0</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Tổng tiền:</span>
+                    <span id="cartTotal">0 đ</span>
+                </div>
+                <a href="checkout.html" class="btn-checkout">Tiến hành thanh toán</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cần data.js để có hàm formatPrice -->
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

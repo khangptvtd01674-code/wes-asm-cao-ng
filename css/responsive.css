@@ -1,0 +1,55 @@
+/* Responsive Styles */
+
+/* TABLET (max-width: 992px) */
+@media (max-width: 992px) {
+    .header-container { flex-wrap: wrap; gap: 15px; }
+    .search-bar { width: 100%; order: 3; }
+    
+    .footer-container { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    
+    .page-layout { flex-direction: column; }
+    .sidebar { width: 100%; margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 20px; }
+    .filter-group { flex: 1; min-width: 200px; margin-bottom: 0; }
+    
+    .product-detail-container { flex-direction: column; }
+    
+    .checkout-layout { flex-direction: column; }
+}
+
+/* MOBILE (max-width: 768px) */
+@media (max-width: 768px) {
+    .nav-links { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+    .nav-links li a { padding: 12px 15px; font-size: 14px; }
+    
+    .slide-content h2 { font-size: 28px; }
+    .btn { padding: 10px 20px; font-size: 14px; }
+    .banner-slider { height: 300px; }
+    
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .product-card { padding: 10px; }
+    .product-name { font-size: 13px; height: 38px; }
+    .product-price { font-size: 15px; }
+    
+    .footer-container { grid-template-columns: 1fr; }
+    
+    .section-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .flash-sale { padding: 20px; }
+    .countdown .time-box span { font-size: 16px; }
+    
+    .cart-table thead { display: none; }
+    .cart-table, .cart-table tbody, .cart-table tr, .cart-table td { display: block; width: 100%; }
+    .cart-table tr { margin-bottom: 15px; border: 1px solid var(--border); padding: 10px; border-radius: var(--radius); }
+    .cart-table td { text-align: right; padding-left: 50%; position: relative; border: none; }
+    .cart-table td::before { content: attr(data-label); position: absolute; left: 10px; width: 45%; text-align: left; font-weight: bold; }
+    .cart-product-info { flex-direction: column; align-items: flex-end; }
+}
+
+/* EXTRA SMALL MOBILE (max-width: 480px) */
+@media (max-width: 480px) {
+    .product-grid { grid-template-columns: 1fr; }
+    .slider-btn { display: none; }
+    .header-actions .action-btn span:not(.badge) { display: none; }
+    
+    .detail-info h1 { font-size: 22px; }
+    .price-box .price { font-size: 24px; }
+}
