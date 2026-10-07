@@ -59,13 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if(password === '') { document.getElementById('errLoginPassword').style.display = 'block'; isValid = false; }
             
             if(isValid) {
-                // Tạo tài khoản demo nếu chưa có data
+                // Đảm bảo luôn có tài khoản demo
                 let users = JSON.parse(localStorage.getItem('techzone_users')) || [];
-                if(users.length === 0) {
+                if(!users.find(u => u.email === "admin@techzone.com")) {
                     users.push({name: "Admin", email: "admin@techzone.com", phone: "0999999999", password: "123456", role: "admin"});
-                    users.push({name: "Người dùng Demo", email: "user@techzone.com", phone: "0909090909", password: "123456", role: "user"});
-                    localStorage.setItem('techzone_users', JSON.stringify(users));
                 }
+                if(!users.find(u => u.email === "user@techzone.com")) {
+                    users.push({name: "Người dùng Demo", email: "user@techzone.com", phone: "0909090909", password: "123456", role: "user"});
+                }
+                localStorage.setItem('techzone_users', JSON.stringify(users));
 
                 const user = users.find(u => (u.email === username || u.phone === username) && u.password === password);
                 
