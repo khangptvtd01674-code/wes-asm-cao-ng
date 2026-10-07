@@ -49,9 +49,9 @@
         <aside class="admin-sidebar">
             <h2><a href="index.html" style="color:inherit">TECHZONE</a></h2>
             <ul class="admin-nav">
-                <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i> Tổng quan & Đơn hàng</a></li>
-                <li><a href="#" onclick="alert('Chức năng Quản lý Sản phẩm đang được cập nhật!'); return false;"><i class="fas fa-box"></i> Sản phẩm</a></li>
-                <li><a href="#" onclick="alert('Chức năng Quản lý Khách hàng đang được cập nhật!'); return false;"><i class="fas fa-users"></i> Khách hàng</a></li>
+                <li><a href="#" class="active" onclick="switchTab('overview', this); return false;"><i class="fas fa-tachometer-alt"></i> Tổng quan & Đơn hàng</a></li>
+                <li><a href="#" onclick="switchTab('products', this); return false;"><i class="fas fa-box"></i> Sản phẩm</a></li>
+                <li><a href="#" onclick="switchTab('users', this); return false;"><i class="fas fa-users"></i> Khách hàng</a></li>
             </ul>
         </aside>
 
@@ -65,7 +65,7 @@
                 </div>
             </header>
 
-            <div class="admin-content">
+            <div class="admin-content" id="view-overview">
                 <div class="dashboard-cards">
                     <div class="card">
                         <div class="card-info"><h3 id="countOrders">0</h3><p>Tổng đơn hàng</p></div>
@@ -99,6 +99,51 @@
                             </tr>
                         </thead>
                         <tbody id="adminOrderList">
+                            <!-- Injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- View Sản phẩm -->
+            <div class="admin-content" id="view-products" style="display: none;">
+                <div class="table-container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3>Quản lý Sản phẩm</h3>
+                        <button class="btn-fill" onclick="addProduct()"><i class="fas fa-plus"></i> Thêm sản phẩm</button>
+                    </div>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Hình ảnh</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Giá</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminProductList">
+                            <!-- Injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- View Khách hàng -->
+            <div class="admin-content" id="view-users" style="display: none;">
+                <div class="table-container">
+                    <h3>Quản lý Khách hàng</h3>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Họ tên</th>
+                                <th>Email</th>
+                                <th>Số điện thoại</th>
+                                <th>Phân quyền</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminUserList">
                             <!-- Injected by JS -->
                         </tbody>
                     </table>

@@ -1,5 +1,5 @@
 // Mock Data cho website (Chuyên Phụ kiện công nghệ)
-const products = [
+const defaultProducts = [
     {
         id: 1,
         name: "Chuột không dây Logitech MX Master 3S",
@@ -196,6 +196,12 @@ const products = [
         isSale: true
     }
 ];
+
+let products = JSON.parse(localStorage.getItem('techzone_products'));
+if (!products || products.length === 0) {
+    products = defaultProducts;
+    localStorage.setItem('techzone_products', JSON.stringify(products));
+}
 
 // Hàm format tiền tệ VNĐ
 const formatPrice = (price) => {
