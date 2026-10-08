@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const index = prods.findIndex(p => p.id === id);
         if (index === -1) return;
         
-        const newPrice = prompt(\`Nhập giá mới cho "\${prods[index].name}":\`, prods[index].price);
+        const newPrice = prompt(`Nhập giá mới cho "${prods[index].name}":`, prods[index].price);
         if (newPrice && !isNaN(newPrice)) {
             prods[index].price = Number(newPrice);
             localStorage.setItem('techzone_products', JSON.stringify(prods));
