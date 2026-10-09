@@ -4,17 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sliderContainer) {
         const slidesData = [
             {
-                image: "https://images.unsplash.com/photo-1616423640778-28d1b53229bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+                image: "images/banner_1.jpg",
                 title: "KHÔNG GIAN LÀM VIỆC ĐỈNH CAO",
                 link: "products.html?category=mouse_keyboard"
             },
             {
-                image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+                image: "images/banner_2.jpg",
                 title: "TRẢI NGHIỆM ÂM THANH SỐNG ĐỘNG",
                 link: "products.html?category=audio"
             },
             {
-                image: "https://images.unsplash.com/photo-1621538354714-3d0473a21d1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+                image: "images/banner_3.png",
                 title: "PHỤ KIỆN BẢO VỆ TOÀN DIỆN",
                 link: "products.html?category=bag"
             }
